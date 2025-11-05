@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Flow | Admin Dashboard</title>
+
+ 
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      font-family: "Open Sans", "Lato", sans-serif;
+      background-color: #0d1117;
+      color: #f1f5f9;
+    }
+    .sidebar {
+      background-color: #161b22;
+    }
+    .sidebar a:hover,
+    .header a:hover {
+      color: #3b82f6;
+    }
+    .card {
+      background-color: #161b22;
+      border-radius: 8px;
+      padding: 16px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    }
+    footer {
+      background-color: #161b22;
+      color: #9ca3af;
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+   <header class="header flex justify-between items-center p-4 bg-[#161b22] shadow">
+    <div class="flex items-center space-x-4">
+      <h1 class="text-2xl font-bold text-[#3b82f6]">Vibe Flow Admin</h1>
+      <nav class="hidden md:flex space-x-4">
+        <a href="#dashboard" class="font-semibold">Dashboard</a>
+        <a href="#users">Users</a>
+        <a href="#music">Music</a>
+        <a href="#playlists">Playlists</a>
+        <a href="#reports">Reports</a>
+      </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+      <button
+        id="roleSwitchBtn"
+        class="px-4 py-1 bg-gray-700 text-white rounded hover:bg-gray-600"
+      >
+        Switch to Client
+      </button>
+      <button class="px-4 py-1 bg-red-600 text-white rounded hover:bg-red-700">
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden">
+   
+    <aside class="sidebar w-64 p-4 hidden md:block">
+      <nav class="flex flex-col space-y-2">
+        <a href="#dashboard" class="px-2 py-1 rounded hover:bg-[#0d1117]">Dashboard</a>
+        <a href="#users" class="px-2 py-1 rounded hover:bg-[#0d1117]">Users</a>
+        <a href="#music" class="px-2 py-1 rounded hover:bg-[#0d1117]">Music</a>
+        <a href="#playlists" class="px-2 py-1 rounded hover:bg-[#0d1117]">Playlists</a>
+        <a href="#reports" class="px-2 py-1 rounded hover:bg-[#0d1117]">Reports</a>
+      </nav>
+
+      <div class="mt-6 space-y-2">
+        <div class="card">Total Users: <span id="totalUsers">0</span></div>
+        <div class="card">Total Songs: <span id="totalSongs">0</span></div>
+        <div class="card">Total Playlists: <span id="totalPlaylists">0</span></div>
+      </div>
+    </aside>
+
+    
+    <main class="flex-1 p-6 overflow-y-auto">
+     
+      <section id="dashboard" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-[#3b82f6]">Dashboard Overview</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="card">User Engagement: 72%</div>
+          <div class="card">Song Plays Today: 1.2k</div>
+          <div class="card">Playlist Creations: 45</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="card h-64 flex justify-center items-center p-0 overflow-hidden">
+            <img
+              src="https://usefathom.com/assets/src/blog/engagement-rate-google-analytics-4-engagement-overview-usefathom.com.jpg"
+              alt="User Engagement Chart"
+            />
+          </div>
+          <div class="card h-64 flex justify-center items-center p-0 overflow-hidden">
+            <img
+              src="https://headphonesaddict.com/wp-content/uploads/2022/07/Most-popular-music-genres-among-US-teens.png"
+              alt="Song Plays Chart"
+            />
+          </div>
+        </div>
+        <div class="card mt-4">
+          <h3 class="font-semibold mb-2">Recent Activity</h3>
+          <ul class="list-disc pl-5 text-gray-400">
+            <li>New user registered: John Doe</li>
+            <li>New song uploaded: "Chill Vibes"</li>
+            <li>New playlist created: "Top Hits 2025"</li>
+          </ul>
+        </div>
+      </section>
+
+     
+      <section id="users" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-[#3b82f6]">User Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div class="card">Total Users: 1500</div>
+          <div class="card">Active Users: 1200</div>
+          <div class="card">New Registrations: 45</div>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold mb-2">User Activity Feed</h3>
+          <ul class="list-disc pl-5 text-gray-400">
+            <li>John logged in</li>
+            <li>Anna played "Song 1"</li>
+            <li>Mark liked "Chill Vibes"</li>
+          </ul>
+        </div>
+      </section>
+
+     
+      <section id="music" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-[#3b82f6]">Music Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div class="card">Total Songs: 5000</div>
+          <div class="card">Total Plays: 12.4M</div>
+          <div class="card">New Uploads: 25</div>
+        </div>
+        <div class="card p-4">
+          <h3 class="font-semibold mb-2">Upload / Edit Song</h3>
+          <form class="space-y-2">
+            <input
+              type="text"
+              placeholder="Song Title"
+              class="w-full p-2 rounded bg-[#0d1117] border border-gray-600"
+            />
+            <input
+              type="text"
+              placeholder="Artist"
+              class="w-full p-2 rounded bg-[#0d1117] border border-gray-600"
+            />
+            <input
+              type="url"
+              placeholder="Song URL"
+              class="w-full p-2 rounded bg-[#0d1117] border border-gray-600"
+            />
+            <button class="px-4 py-2 bg-[#3b82f6] rounded hover:bg-[#2563eb]">
+              Upload / Save
+            </button>
+          </form>
+        </div>
+      </section>
+
+      
+      <section id="playlists" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-[#3b82f6]">Playlist Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div class="card">Total Playlists: 300</div>
+          <div class="card">Total Followers: 15k</div>
+          <div class="card">New Playlists: 10</div>
+        </div>
+        <div class="card p-4">
+          <h3 class="font-semibold mb-2">Create / Edit Playlist</h3>
+          <form class="space-y-2">
+            <input
+              type="text"
+              placeholder="Playlist Name"
+              class="w-full p-2 rounded bg-[#0d1117] border border-gray-600"
+            />
+            <input
+              type="text"
+              placeholder="Description"
+              class="w-full p-2 rounded bg-[#0d1117] border border-gray-600"
+            />
+            <button class="px-4 py-2 bg-[#3b82f6] rounded hover:bg-[#2563eb]">
+              Save Playlist
+            </button>
+          </form>
+        </div>
+      </section>
+
+      
+      <section id="reports" class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-[#3b82f6]">Reports</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div class="card">Export CSV</div>
+          <div class="card">Export PDF</div>
+          <div class="card">Export Excel</div>
+        </div>
+        <div class="card p-4">
+          <h3 class="font-semibold mb-2">Generate Report</h3>
+          <button class="px-4 py-2 bg-[#3b82f6] rounded hover:bg-[#2563eb]">
+            Generate Now
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+ 
+  <footer class="text-center p-4 mt-auto">
+    <p>&copy; 2025 Vibe Flow. All rights reserved. | Version 1.0.0</p>
+  </footer>
+
+ 
+  <script>
+    const roleBtn = document.getElementById("roleSwitchBtn");
+
+    function loadRole() {
+      const role = localStorage.getItem("userRole") || "client";
+      if (role === "admin") {
+        roleBtn.innerText = "Switch to Client";
+      } else {
+        roleBtn.innerText = "Switch to Admin";
+        window.location.href = "index2.html";
+      }
+    }
+
+    roleBtn.addEventListener("click", () => {
+      const currentRole = localStorage.getItem("userRole") || "client";
+      if (currentRole === "admin") {
+        localStorage.setItem("userRole", "client");
+        window.location.href = "home.html";
+      } else {
+        localStorage.setItem("userRole", "admin");
+        window.location.href = "admin.html";
+      }
+    });
+
+  
+    localStorage.setItem("userRole", "admin");
+    loadRole();
+  </script>
+</body>
+</html>

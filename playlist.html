@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Flow | Playlist</title>
+
+ 
+  <script src="https://cdn.tailwindcss.com"></script>
+
+ 
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Open Sans', 'Lato', sans-serif;
+      background-color: #0d1117;
+      color: #f1f5f9;
+    }
+    nav { background-color: #161b22; box-shadow: 0 2px 2px rgba(0,0,0,0.5); }
+    nav a:hover { color: #3b82f6; }
+    .playlist-hero {
+      background: url('logo.jpg') center/cover no-repeat;
+      height: 400px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .playlist-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      border-radius: 0.5rem;
+    }
+    .playlist-hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    .song-row:hover { background-color: #1f2937; }
+    .btn-primary { background-color: #3b82f6; color: white; }
+    .btn-primary:hover { background-color: #2563eb; }
+  </style>
+</head>
+<body>
+
+ 
+  <nav class="flex justify-between items-center px-6 py-4">
+    <div class="flex items-center space-x-4">
+      <h1 class="text-2xl font-bold text-[#3b82f6]">Vibe Flow</h1>
+      <ul class="flex space-x-6 text-gray-300 hidden md:flex">
+        <li><a href="index2.html" class="hover:text-[#3b82f6] font-semibold">Home</a></li>
+        <li><a href="library.html" class="hover:text-[#3b82f6]">Library</a></li>
+        <li><a href="playlist.html" class="hover:text-[#3b82f6] font-semibold">Playlist</a></li>
+      </ul>
+    </div>
+    <div class="flex space-x-4">
+      <a href="admin.html" class="px-4 py-1 bg-gray-700 text-white rounded hover:bg-gray-600">Admin</a>
+    </div>
+  </nav>
+
+  
+  <section class="playlist-hero rounded-lg mx-6">
+    <div class="playlist-hero-content text-white max-w-3xl">
+      <h2 class="text-4xl font-bold mb-2">Chill Vibes Playlist</h2>
+      <p class="text-gray-200 mb-4">A relaxing mix of chill tracks to soothe your mind and energize your day.</p>
+      <div class="flex items-center space-x-4">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.ET8zK9MlrNc-yq8EedNM5gHaEK?pid=Api&P=0&h=180" class="rounded shadow-lg" alt="Playlist Artwork"/>
+        <div>
+          <p class="font-semibold">Curated by <span class="text-[#3b82f6]">DJ Serenity</span></p>
+          <div class="flex space-x-2 mt-2">
+            <button class="btn-primary px-4 py-2 rounded"><i class="fa fa-play"></i> Play</button>
+            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-700"><i class="fa fa-heart"></i> Follow</button>
+            <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-700"><i class="fa fa-share-alt"></i> Share</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="mx-6 mb-8">
+    <h3 class="text-2xl font-bold text-[#3b82f6] mb-4">Songs in this Playlist</h3>
+    <div class="bg-[#161b22] rounded-lg overflow-hidden">
+      <div class="grid grid-cols-12 gap-4 p-4 font-semibold border-b border-gray-700">
+        <div class="col-span-1">#</div>
+        <div class="col-span-5">Title</div>
+        <div class="col-span-3">Artist</div>
+        <div class="col-span-2">Duration</div>
+        <div class="col-span-1">Actions</div>
+      </div>
+
+      
+      <div class="grid grid-cols-12 gap-4 p-4 items-center song-row border-b border-gray-700">
+        <div class="col-span-1">1</div>
+        <div class="col-span-5">Dreams</div>
+        <div class="col-span-3">Fleetwood Mac</div>
+        <div class="col-span-2">4:15</div>
+        <div class="col-span-1 flex space-x-2">
+          <button class="hover:text-[#3b82f6]"><i class="fa fa-play"></i></button>
+          <button class="hover:text-[#3b82f6]"><i class="fa fa-plus"></i></button>
+          <button class="hover:text-red-600"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 p-4 items-center song-row border-b border-gray-700">
+        <div class="col-span-1">2</div>
+        <div class="col-span-5">Sunset Lover</div>
+        <div class="col-span-3">Petit Biscuit</div>
+        <div class="col-span-2">3:58</div>
+        <div class="col-span-1 flex space-x-2">
+          <button class="hover:text-[#3b82f6]"><i class="fa fa-play"></i></button>
+          <button class="hover:text-[#3b82f6]"><i class="fa fa-plus"></i></button>
+          <button class="hover:text-red-600"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <div class="flex justify-end mt-4 space-x-4">
+      <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-700"><i class="fa fa-random"></i> Shuffle</button>
+      <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-700"><i class="fa fa-sort"></i> Sort</button>
+    </div>
+  </section>
+
+  
+  <section class="mx-6 mb-8">
+    <h3 class="text-2xl font-bold text-[#3b82f6] mb-2">Playlist Info</h3>
+    <p class="text-gray-300 mb-2">
+      This playlist is perfect for relaxing at home or studying. Enjoy smooth transitions and carefully curated tracks.
+    </p>
+    <p class="text-gray-400 mb-2">Created by <span class="text-[#3b82f6]">DJ Serenity</span></p>
+    <p class="text-gray-400 mb-2">Total Plays: <span class="font-semibold">24,589</span> | Followers: <span class="font-semibold">3,210</span></p>
+
+    <h4 class="text-xl font-semibold text-[#3b82f6] mt-4 mb-2">Related Playlists</h4>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="bg-[#161b22] rounded p-2 text-center hover:bg-gray-800 cursor-pointer">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.xaOcjxNDSvK5nq6V1DK7YgHaEK?pid=Api&P=0&h=180" class="rounded mb-2"/>
+        <p>Chill Beats</p>
+      </div>
+      <div class="bg-[#161b22] rounded p-2 text-center hover:bg-gray-800 cursor-pointer">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.QvQIuyeR9nt4La7Z__zRgAHaEK?pid=Api&P=0&h=180" class="rounded mb-2"/>
+        <p>Evening Vibes</p>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="mx-6 mb-8">
+    <h3 class="text-2xl font-bold text-[#3b82f6] mb-4">Comments</h3>
+
+   
+    <div class="space-y-4 mb-4">
+      <div class="bg-[#161b22] p-4 rounded">
+        <p class="font-semibold">Alice <span class="text-gray-400 text-sm">- 2 hours ago</span></p>
+        <p class="text-gray-300">Love this playlist! Perfect for studying.</p>
+      </div>
+      <div class="bg-[#161b22] p-4 rounded">
+        <p class="font-semibold">Bob <span class="text-gray-400 text-sm">- 1 day ago</span></p>
+        <p class="text-gray-300">Amazing selection of tracks. Great vibes!</p>
+      </div>
+    </div>
+
+    
+    <form class="bg-[#161b22] p-4 rounded flex flex-col md:flex-row gap-4">
+      <input type="text" placeholder="Add a comment..." class="flex-1 p-2 rounded bg-[#0d1117] border border-gray-600 focus:outline-none focus:border-[#3b82f6] text-white"/>
+      <button class="btn-primary px-4 py-2 rounded"><i class="fa fa-paper-plane"></i> Submit</button>
+    </form>
+  </section>
+
+
+  <footer class="text-center p-6 mt-6 bg-[#161b22] text-gray-400">
+    <p>&copy; 2025 Vibe Flow. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
